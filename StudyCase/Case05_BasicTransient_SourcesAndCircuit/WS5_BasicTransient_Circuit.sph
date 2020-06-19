@@ -1,0 +1,18 @@
+* 0;MaxCir.ckt
+* Project: E:/GitHubLib_Lib/ANSYS_Project/StudyCase/Case05_BasicTransient_SourcesAndCircuit/WS5_BasicTransient_Circuit.amcp
+* Design: MaxCir
+
+*BeginParamDef
+*EndParamDef
+
+
+*begin toplevel circuit
+V3 net_2 net_1 SIN (0 100 50 0 0 0) 
+LWinding_A net_4 0 1 Winding
+V4 net_1 0 SIN (0 10 1000 0 0 0) 
+IVoltmeter6 net_2 0 DC 0 
+.PRINT TRAN PROBE IVoltmeter6(t) V(IVoltmeter6)
+R5 net_2 net_4 25
+
+*end toplevel circuit
+.end
